@@ -4,7 +4,7 @@
 
     <pokemon-picture :pokemonId="4" :showPokemon="true"/>
 
-    <pokemon-options />
+    <pokemon-options :pokemons="pokemonArr" />
 
   </div>
 </template>
@@ -19,6 +19,21 @@ import getPokemonOptions from '@/helpers/getPokemonOptions'
 
 export default {
   components: { PokemonPicture, PokemonOptions },
+
+  data(){
+    return {
+      pokemonArr: []
+    }
+  },
+  methods: {
+    async mixPokemonArray(){
+      this.pokemonArr = await getPokemonOptions()
+      console.log(this.pokemonArr);
+    }
+  },
+  mounted(){
+    this.mixPokemonArray()
+  }
 
 }
 </script>
