@@ -19,7 +19,7 @@ export default {
       type: Number,
       required: true,
       validator(value) {
-        return value > 0 && value <= 600;
+        return value > 0 && value <= 650;
       }
     },
     showPokemon: {

@@ -3,7 +3,8 @@
     <ul>
       <li
         v-for="pokemon in pokemons"
-        :key="pokemon.id">
+        :key="pokemon.id"
+        @click="$emit('selection', pokemon.id)">
         {{pokemon.name}}
         </li>
     </ul>
@@ -18,7 +19,12 @@ export default {
       type: Array,
       required: true
     }
-  }
+  },
+  // methods: {
+  //   hola(){
+  //     this.$emit()
+  //   }
+  // }
 
 }
 </script>
